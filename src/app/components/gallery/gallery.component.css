@@ -1,0 +1,300 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.gallery-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 0 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ------------------ */
+/* HERO */
+/* ------------------ */
+
+.page-hero {
+  text-align: center;
+  padding: 6px 0 4px;
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.page-subtitle {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.page-subtitle::before,
+.page-subtitle::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  max-width: 72px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(200, 169, 106, 0.85),
+    transparent
+  );
+}
+
+.hero-ornament {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-ornament span {
+  position: relative;
+  width: 30px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.hero-ornament span::before,
+.hero-ornament span::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-top: 1.5px solid var(--color-accent);
+  border-radius: 50%;
+}
+
+.hero-ornament span::before {
+  left: 3px;
+  transform: rotate(18deg);
+}
+
+.hero-ornament span::after {
+  right: 3px;
+  transform: rotate(-18deg);
+}
+
+/* ------------------ */
+/* CARD */
+/* ------------------ */
+
+.info-card {
+  position: relative;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.82);
+  /*border: 1px solid rgba(200, 169, 106, 0.16);*/
+  border-radius: 20px;
+  padding: 26px 18px 20px;
+  box-shadow: none;
+}
+
+.card-title {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.card-title::before,
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  max-width: 36px;
+  opacity: 0.35;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(200, 169, 106, 0.85),
+    transparent
+  );
+}
+
+/* ------------------ */
+/* GALLERY GRID */
+/* ------------------ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(248, 246, 242, 0.9);
+  border: 1px solid rgba(200, 169, 106, 0.14);
+  aspect-ratio: 4 / 5;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* placeholder varianta, pokud zatím nemáš fotky */
+.gallery-item.is-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.gallery-placeholder-text {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* ------------------ */
+/* TABLET */
+/* ------------------ */
+
+@media (min-width: 768px) {
+  .gallery-page {
+    padding-top: 12px;
+    gap: 32px;
+  }
+
+  .page-hero {
+    padding: 8px 0 6px;
+  }
+
+  .page-title {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .page-subtitle {
+    font-size: 0.82rem;
+    gap: 14px;
+  }
+
+  .page-subtitle::before,
+  .page-subtitle::after {
+    max-width: 96px;
+  }
+
+  .hero-ornament {
+    margin-top: 12px;
+  }
+
+  .info-card {
+    border-radius: 22px;
+    padding: 28px 24px 24px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .card-title::before,
+  .card-title::after {
+    max-width: 64px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .gallery-item {
+    border-radius: 18px;
+  }
+}
+
+/* ------------------ */
+/* DESKTOP */
+/* ------------------ */
+
+@media (min-width: 900px) {
+  .gallery-page {
+    padding-top: 14px;
+    gap: 36px;
+  }
+
+  .page-hero {
+    padding: 10px 0 8px;
+  }
+
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .page-subtitle::before,
+  .page-subtitle::after {
+    max-width: 120px;
+  }
+
+  .hero-ornament {
+    margin-top: 14px;
+  }
+
+  .info-card {
+    border-radius: 24px;
+    padding: 30px 28px 26px;
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 26px;
+  }
+
+  .card-title::before,
+  .card-title::after {
+    max-width: 82px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-item {
+    border-radius: 20px;
+  }
+}
