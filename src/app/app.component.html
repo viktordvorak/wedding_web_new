@@ -1,8 +1,8 @@
 <div class="app-container">
   <div class="page-frame">
-    <div class="page-content">
-      <!-- sem se budou renderovat stránky -->
-      <router-outlet></router-outlet>
+    <div class="page-content" [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>
 </div>
+

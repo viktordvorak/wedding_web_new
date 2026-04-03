@@ -16,7 +16,7 @@ html, body {
 /* ROOT VARIABLES */
 :root {
   --color-bg: #F8F6F2;
-  --color-text: #2B2B2B;
+  --color-text: #726962;/*#2B2B2B;*/
   --color-muted: #6B6B6B;
   --color-accent: #C8A96A;
   --color-border: #E5DED6;

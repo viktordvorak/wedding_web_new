@@ -7,8 +7,8 @@ import { GuestsPageComponent } from './components/guests-page/guests-page.compon
 import { PlacePageComponent } from './components/place-page/place-page.component';
 
 const routes: Routes = [
-  {path: 'welcome-page', component: WelcomePageComponent},
-  {path: 'place-page', component: PlacePageComponent},
+  {path: 'welcome-page', component: WelcomePageComponent, data: { animation: 'welcome' }},
+  {path: 'place-page', component: PlacePageComponent, data: { animation: 'info' }},
   {path: 'schedule-page', component: SchedulePageComponent},
   {path: 'gallery-page', component: GalleryComponent},
   {path: 'guests-page', component: GuestsPageComponent},

@@ -8,6 +8,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { SchedulePageComponent } from './components/schedule-page/schedule-page.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GuestsPageComponent } from './components/guests-page/guests-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GuestsPageComponent } from './components/guests-page/guests-page.compon
     WelcomePageComponent,
     SchedulePageComponent,
     GalleryComponent,
-    GuestsPageComponent
+    GuestsPageComponent,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [],
