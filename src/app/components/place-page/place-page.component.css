@@ -1,6 +1,13 @@
 :host {
   display: block;
   width: 100%;
+
+  /* Responsive icon system */
+  --icon-phone-size: 18px;
+  --icon-whatsapp-size: 19px; /* opticky srovnané s telefonem */
+  --icon-map-size: 0.92em;    /* navázané na text */
+  --icon-stroke-width: 1.6;
+  --icon-gap: 10px;
 }
 
 .instruction-page {
@@ -20,6 +27,9 @@
 .info-intro {
   text-align: center;
   padding: 16px 16px 8px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 0;
 }
 
 .info-intro__title {
@@ -64,6 +74,103 @@
   font-size: 0.9rem;
   line-height: 1.6;
   color: #726962;
+  position: relative;
+  z-index: 0;
+}
+
+/*
+.info-intro--shadow-gold-soft .info-intro__text::before,
+.info-intro--shadow-gold-soft .info-intro__text::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 999px;
+}
+
+.info-intro--shadow-gold-soft .info-intro__text::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -32%);
+  width: 160px;
+  height: 26px;
+  background: rgba(201, 166, 70, 0.045);
+  box-shadow:
+    0 8px 20px rgba(201, 166, 70, 0.08),
+    0 14px 28px rgba(201, 166, 70, 0.05),
+    0 0 18px rgba(201, 166, 70, 0.035);
+  filter: blur(12px);
+  opacity: 0.95;
+}
+
+.info-intro--shadow-gold-soft .info-intro__text::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-56%, -16%) rotate(-5deg);
+  width: 125px;
+  height: 42px;
+  background: rgba(201, 166, 70, 0.03);
+  box-shadow:
+    0 6px 14px rgba(201, 166, 70, 0.05),
+    0 0 14px rgba(201, 166, 70, 0.03);
+  filter: blur(10px);
+  opacity: 0.75;
+}*/
+
+.info-intro {
+  text-align: center;
+  padding: 16px 16px 8px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 0;
+}
+
+.info-intro--shadow-gold-soft {
+  position: relative;
+  z-index: 0;
+}
+
+.info-intro--shadow-gold-soft::before,
+.info-intro--shadow-gold-soft::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 999px;
+}
+
+/* hlavní zlaté světlo */
+.info-intro--shadow-gold-soft::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -34%);
+  width: 220px;
+  height: 92px;
+
+  /* místo dlouhého gradientu spíš jemné vrstvené shadow */
+  background: rgba(201, 166, 70, 0.06);
+  box-shadow:
+    0 10px 24px rgba(201, 166, 70, 0.10),
+    0 18px 42px rgba(201, 166, 70, 0.07),
+    0 0 34px rgba(201, 166, 70, 0.05);
+  filter: blur(10px);
+  opacity: 0.95;
+}
+
+/* lehká nepravidelnost, ale bez kruhů */
+.info-intro--shadow-gold-soft::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-56%, -28%) rotate(-4deg);
+  width: 160px;
+  height: 70px;
+
+  background: rgba(201, 166, 70, 0.035);
+  box-shadow:
+    0 8px 18px rgba(201, 166, 70, 0.06),
+    0 0 20px rgba(201, 166, 70, 0.04);
+  filter: blur(8px);
+  opacity: 0.8;
 }
 
 /* ------------------ */
@@ -181,7 +288,11 @@
   transition: transform 0.3s ease;
 }
 
-/*svg link*/
+/* ------------------ */
+/* ICON SYSTEM */
+/* ------------------ */
+
+/* event location link */
 .event-link {
   color: inherit;
   text-decoration: none;
@@ -193,8 +304,26 @@
 .map-icon {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  line-height: 1;
   opacity: 0.85;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.map-pin-icon {
+  width: var(--icon-map-size);
+  height: var(--icon-map-size);
+  display: block;
+  flex-shrink: 0;
+  stroke: #c9a646;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.map-pin-icon circle {
+  fill: #c9a646;
+  stroke: none;
 }
 
 .event-link:hover .map-icon {
@@ -202,30 +331,104 @@
   opacity: 1;
 }
 
-/*svg phone*/
-.contact-link a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Playfair Display", serif;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #6d625c;
-  text-decoration: none;
-}
-
-.phone-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.9;
+/* phone + whatsapp */
+.phone-icon,
+.whatsapp-icon {
+  display: block;
   flex-shrink: 0;
+  fill: none;
+  stroke: #c9a646;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.contact-link a:hover .phone-icon {
-  transform: translateY(-1px);
+.phone-icon {
+  width: var(--icon-phone-size);
+  height: var(--icon-phone-size);
+  stroke-width: var(--icon-stroke-width);
+}
+
+.whatsapp-icon {
+  width: var(--icon-whatsapp-size);
+  height: var(--icon-whatsapp-size);
+  stroke-width: var(--icon-stroke-width);
+}
+
+/* ------------------ */
+/* MISSING INFO */
+/* ------------------ */
+
+.missing-info__text {
+  text-align: center;
+  max-width: 280px;
+  margin: 10px auto 18px;
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #726962;
+}
+
+.contact-inline-vertical {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  margin-top: 12px;
+}
+
+.contact-inline-vertical__item {
+  text-align: center;
+}
+
+.contact-inline-vertical__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--icon-gap);
+  margin-top: 4px;
+}
+
+.contact-inline-vertical__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.contact-inline-vertical__name {
+  display: block;
+  margin-top: 6px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.95rem;
+  color: #c9a646;
+  letter-spacing: 0.03em;
+}
+
+.contact-inline-vertical__link:hover .phone-icon,
+.contact-inline-vertical__link:hover .whatsapp-icon {
   opacity: 1;
+  transform: translateY(-1px);
+}
+
+.contact-inline-vertical__link:focus-visible {
+  outline: 1px solid rgba(201, 166, 70, 0.4);
+  outline-offset: 4px;
+}
+
+/* ------------------ */
+/* MOBILE DEFAULT */
+/* ------------------ */
+
+@media (max-width: 767.98px) {
+  :host {
+    --icon-phone-size: 18px;
+    --icon-whatsapp-size: 19px;
+    --icon-map-size: 0.92em;
+    --icon-stroke-width: 1.6;
+    --icon-gap: 10px;
+  }
 }
 
 /* ------------------ */
@@ -233,6 +436,14 @@
 /* ------------------ */
 
 @media (min-width: 768px) {
+  :host {
+    --icon-phone-size: 19px;
+    --icon-whatsapp-size: 20px;
+    --icon-map-size: 0.96em;
+    --icon-stroke-width: 1.65;
+    --icon-gap: 11px;
+  }
+
   .instruction-page {
     padding: 10px 0 20px;
     gap: 18px;
@@ -319,6 +530,14 @@
 /* ------------------ */
 
 @media (min-width: 1024px) {
+  :host {
+    --icon-phone-size: 20px;
+    --icon-whatsapp-size: 21px;
+    --icon-map-size: 1em;
+    --icon-stroke-width: 1.7;
+    --icon-gap: 12px;
+  }
+
   .instruction-page {
     padding: 12px 0 24px;
     gap: 20px;
