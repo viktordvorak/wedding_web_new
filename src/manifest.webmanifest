@@ -1,0 +1,20 @@
+{
+  "name": "Barbora & Viktor",
+  "short_name": "B&V",
+  "start_url": "/welcome-page",
+  "display": "standalone",
+  "background_color": "#f5f2ed",
+  "theme_color": "#c9a646",
+  "icons": [
+    {
+      "src": "assets/images/logo2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/logo2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
