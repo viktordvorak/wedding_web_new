@@ -1,18 +1,58 @@
 <nav class="page-nav" aria-label="Hlavní navigace">
-  <a routerLink="/welcome-page" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
-    Úvod
+  <a
+    routerLink="/welcome-page"
+    routerLinkActive="is-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    #homeLink="routerLinkActive"
+  >
+    <img
+      class="page-nav__icon"
+      [src]="homeLink.isActive ? 'assets/images/invitation-gold.png' : 'assets/images/invitation-black.png'"
+      alt=""
+      aria-hidden="true"
+    />
+    <span>Úvod</span>
   </a>
 
-  <a routerLink="/place-page" routerLinkActive="is-active">
-    Info
+  <a
+    routerLink="/place-page"
+    routerLinkActive="is-active"
+    #infoLink="routerLinkActive"
+  >
+    <img
+      class="page-nav__icon"
+      [src]="infoLink.isActive ? 'assets/images/info-gold2.png' : 'assets/images/info-black2.png'"
+      alt=""
+      aria-hidden="true"
+    />
+    <span>Info</span>
   </a>
 
-  <a routerLink="/guests-page" routerLinkActive="is-active">
-    Hosté
+  <a
+    routerLink="/guests-page"
+    routerLinkActive="is-active"
+    #guestsLink="routerLinkActive"
+  >
+    <img
+      class="page-nav__icon"
+      [src]="guestsLink.isActive ? 'assets/images/guests-gold2.png' : 'assets/images/guests-black2.png'"
+      alt=""
+      aria-hidden="true"
+    />
+    <span>Hosté</span>
   </a>
 
-  <a routerLink="/gallery-page" routerLinkActive="is-active">
-    Galerie
+  <a
+    routerLink="/gallery-page"
+    routerLinkActive="is-active"
+    #galleryLink="routerLinkActive"
+  >
+    <img
+      class="page-nav__icon"
+      [src]="galleryLink.isActive ? 'assets/images/gallery-gold2.png' : 'assets/images/gallery-black2.png'"
+      alt=""
+      aria-hidden="true"
+    />
+    <span>Galerie</span>
   </a>
 </nav>
-<!--<img src="/assets/images/divider-transparent.png" alt="" class="divider"> -->
