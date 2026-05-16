@@ -3,16 +3,16 @@
   width: 100%;
 
   --section-icon-size: 32px;
-  --section-icon-place-size: 34px;
-  --section-icon-program-size: 32px;
-  --section-icon-info-size: 31px;
+  --section-icon-place-size: 38px;
+  --section-icon-program-size: 36px;
+  --section-icon-info-size: 35px;
   --section-icon-line-width: 38px;
 
-  --icon-phone-size: 18px;
-  --icon-whatsapp-size: 19px;
-  --icon-map-size: 1.1em;/*0.92*/
-  --icon-stroke-width: 1.6;
-  --icon-gap: 10px;
+  --icon-phone-size: 21px;
+  --icon-whatsapp-size: 22px;
+  --icon-map-size: 1.22em;
+  --icon-stroke-width: 1.45;
+  --icon-gap: 11px;
 }
 
 .instruction-page {
@@ -152,7 +152,7 @@
   margin: 0;
 }
 
-.card-content p + p {
+.card-content p+p {
   margin-top: 6px;
 }
 
@@ -366,25 +366,27 @@
   display: block;
   margin-top: 6px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
   color: #c9a646;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
 }
 
 /* TABLET */
 
 @media (min-width: 768px) {
   :host {
-    --section-icon-place-size: 40px;
-    --section-icon-program-size: 38px;
-    --section-icon-info-size: 37px;
+    --section-icon-place-size: 44px;
+    --section-icon-program-size: 42px;
+    --section-icon-info-size: 41px;
     --section-icon-line-width: 48px;
 
-    --icon-phone-size: 19px;
-    --icon-whatsapp-size: 20px;
-    --icon-map-size: 1.1em;/*0.96*/
-    --icon-stroke-width: 1.65;
-    --icon-gap: 11px;
+    --icon-phone-size: 23px;
+    --icon-whatsapp-size: 24px;
+    --icon-map-size: 1.28em;
+    --icon-stroke-width: 1.5;
+    --icon-gap: 12px;
   }
 
   .instruction-page {
@@ -466,22 +468,28 @@
   .contact-inline-vertical {
     gap: 36px;
   }
+
+  .contact-inline-vertical__name {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
 }
 
 /* DESKTOP */
 
 @media (min-width: 1024px) {
   :host {
-    --section-icon-place-size: 44px;
-    --section-icon-program-size: 42px;
-    --section-icon-info-size: 41px;
+    --section-icon-place-size: 50px;
+    --section-icon-program-size: 48px;
+    --section-icon-info-size: 47px;
     --section-icon-line-width: 56px;
 
-    --icon-phone-size: 20px;
-    --icon-whatsapp-size: 21px;
-    --icon-map-size: 1.1em;
-    --icon-stroke-width: 1.7;
-    --icon-gap: 12px;
+    --icon-phone-size: 25px;
+    --icon-whatsapp-size: 26px;
+    --icon-map-size: 1.34em;
+    --icon-stroke-width: 1.55;
+    --icon-gap: 13px;
   }
 
   .instruction-page {
@@ -556,4 +564,9 @@
   .contact-inline-vertical {
     gap: 44px;
   }
+
+  .contact-inline-vertical__name {
+    font-size: 1.14rem;
+  }
+
 }

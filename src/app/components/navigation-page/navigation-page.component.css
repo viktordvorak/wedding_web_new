@@ -126,7 +126,7 @@
 .page-nav a span {
   display: block;
 }
-
+/*
 .page-nav a.is-active::after {
   content: "";
   position: absolute;
@@ -157,7 +157,7 @@
     radial-gradient(circle at center, transparent 0 3px, #000 3.2px),
     linear-gradient(#000, #000);
   mask-composite: exclude;
-}
+}*/
 
 .divider {
   display: block;
@@ -194,11 +194,11 @@
     height: 38px;
     margin-bottom: 7px;
   }
-
+/*
   .page-nav a.is-active::after {
     width: 72px;
     height: 11px;
-  }
+  }*/
 }
 
 /* ------------------ */
@@ -221,8 +221,8 @@
 
     font-size: 17px;
   }
-
+/*
   .page-nav a.is-active::after {
     width: 84px;
-  }
+  }*/
 }
