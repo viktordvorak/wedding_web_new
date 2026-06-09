@@ -17,6 +17,7 @@
     "@angular/platform-browser": "^19.0.5",
     "@angular/platform-browser-dynamic": "^19.0.5",
     "@angular/router": "^19.0.5",
+    "googleapis": "^173.0.0",
     "rxjs": "^7.5.0",
     "zone.js": "~0.15.0"
   },
@@ -24,6 +25,7 @@
     "@angular/build": "^19.0.6",
     "@angular/cli": "^19.0.6",
     "@angular/compiler-cli": "^19.0.5",
+    "@types/node": "^25.9.2",
     "typescript": "~5.6.3"
   }
 }
