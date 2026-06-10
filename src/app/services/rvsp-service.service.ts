@@ -8,7 +8,7 @@ export class RsvpService {
   constructor(private http: HttpClient) { }
 
   submitRsvp(data: RsvpRequest) {
-    return this.http.post('http://localhost:3000/api/rsvp', data);
+    return this.http.post('/api/rsvp', data);//http://localhost:3000/api/rsvp
   }
 
 }

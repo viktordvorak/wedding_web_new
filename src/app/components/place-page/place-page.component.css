@@ -90,31 +90,22 @@
 
 .info-intro--shadow-gold-soft::before {
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -34%);
-  width: 220px;
-  height: 92px;
-  background: rgba(201, 166, 70, 0.06);
-  box-shadow:
-    0 10px 24px rgba(201, 166, 70, 0.1),
-    0 18px 42px rgba(201, 166, 70, 0.07),
-    0 0 34px rgba(201, 166, 70, 0.05);
-  filter: blur(10px);
-  opacity: 0.95;
+  top: 56%;
+  transform: translate(-50%, -48%);
+  width: 260px;
+  height: 100px;
+  background: radial-gradient(ellipse 130px 50px at 50% 52%, rgba(201, 166, 70, 0.18), rgba(201, 166, 70, 0.08) 55%, transparent 95%);
+  opacity: 0.85;
 }
 
 .info-intro--shadow-gold-soft::after {
   left: 50%;
-  top: 50%;
-  transform: translate(-56%, -28%) rotate(-4deg);
-  width: 160px;
-  height: 70px;
-  background: rgba(201, 166, 70, 0.035);
-  box-shadow:
-    0 8px 18px rgba(201, 166, 70, 0.06),
-    0 0 20px rgba(201, 166, 70, 0.04);
-  filter: blur(8px);
-  opacity: 0.8;
+  top: 58%;
+  transform: translate(-50%, -60%) rotate(-2deg);
+  width: 210px;
+  height: 60px;
+  background: radial-gradient(ellipse 100px 30px at 50% 50%, rgba(201, 166, 70, 0.1), transparent 92%);
+  opacity: 0.65;
 }
 
 /* CARDS */
