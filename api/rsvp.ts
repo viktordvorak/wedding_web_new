@@ -1,4 +1,4 @@
-import process from 'node:process';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 const allowedOrigins = [
   'http://localhost:4200',
