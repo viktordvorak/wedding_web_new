@@ -1,5 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
 const allowedOrigins = [
   'http://localhost:4200',
   'http://localhost:3000',
@@ -7,7 +5,7 @@ const allowedOrigins = [
   'https://baruaviktor.cz',
 ];
 
-module.exports = async function handler(req: any, res: any) {
+module.exports = async function handler(req, res) {
   const origin = req.headers.origin;
 
   if (origin && allowedOrigins.includes(origin)) {
