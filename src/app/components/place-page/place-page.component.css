@@ -391,13 +391,13 @@
 }
 
 .rsvp-link__icon {
-  width: 34px;
-  height: 34px;
+  width: 26px;
+  height: 26px;
 
   display: block;
   fill: none;
   stroke: #c9a646;
-  stroke-width: 0.9;
+  stroke-width: 1.15;
   stroke-linecap: round;
   stroke-linejoin: round;
   opacity: 0.85;
@@ -512,6 +512,11 @@
     font-size: 17px;
   }
 
+  .rsvp-link__icon {
+    width: 28px;
+    height: 28px;
+  }
+
 }
 
 /* DESKTOP */
@@ -609,6 +614,11 @@
 
   .rsvp-link {
     font-size: 18px;
+  }
+
+  .rsvp-link__icon {
+    width: 30px;
+    height: 30px;
   }
 
 }

@@ -2,6 +2,8 @@
     display: block;
     width: 100%;
 
+    --field-icon-box-size: 20px;
+    --field-icon-image-size: 18px;
     --rsvp-gold: rgb(201, 166, 70);
     --rsvp-text: rgb(95, 95, 95);
     --rsvp-muted: #726962;
@@ -210,18 +212,6 @@
 .form-field__label {
     display: flex;
     align-items: center;
-    gap: 8px;
-
-    font-family: "Playfair Display", serif;
-    font-size: 0.82rem;
-    line-height: 1.3;
-
-    color: var(--rsvp-text);
-}
-
-.form-field__label {
-    display: flex;
-    align-items: center;
     gap: 9px;
 
     font-family: "Playfair Display", serif;
@@ -233,11 +223,13 @@
 
 .field-icon {
     display: block;
-    width: 18px;
-    height: 18px;
+    width: var(--field-icon-box-size);
+    height: var(--field-icon-box-size);
+
     object-fit: contain;
     object-position: center;
-    flex: 0 0 auto;
+    flex: 0 0 var(--field-icon-box-size);
+
     opacity: 0.95;
 }
 
@@ -400,56 +392,56 @@
 /* SUBMIT */
 
 .submit-button {
-  width: 100%;
-  max-width: 260px;
-  min-height: 42px;
-  margin: 0 auto;
+    width: 100%;
+    max-width: 260px;
+    min-height: 42px;
+    margin: 0 auto;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-  border: 1px solid rgba(201, 166, 70, 0.9);
-  border-radius: 999px;
-  background: var(--rsvp-gold);
-  color: #ffffff;
+    border: 1px solid rgba(201, 166, 70, 0.9);
+    border-radius: 999px;
+    background: var(--rsvp-gold);
+    color: #ffffff;
 
-  font-family: "Playfair Display", serif;
-  font-size: 0.9rem;
-  line-height: 1;
-  font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-size: 0.9rem;
+    line-height: 1;
+    font-weight: 600;
 
-  box-shadow: 0 8px 20px rgba(201, 166, 70, 0.16);
-  transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    box-shadow: 0 8px 20px rgba(201, 166, 70, 0.16);
+    transition:
+        border-color 180ms ease,
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
 }
 
 .submit-button:hover:not(:disabled),
 .submit-button:focus-visible:not(:disabled) {
-  background: rgba(201, 166, 70, 0.95);
-  border-color: rgba(201, 166, 70, 1);
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(201, 166, 70, 0.24);
+    background: rgba(201, 166, 70, 0.95);
+    border-color: rgba(201, 166, 70, 1);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(201, 166, 70, 0.24);
 }
 
 .submit-button:disabled {
-  background: rgba(255, 255, 255, 0.6);
-  border-color: rgba(225, 210, 177, 0.55);
-  color: rgba(95, 95, 95, 0.45);
-  cursor: not-allowed;
-  box-shadow: none;
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(225, 210, 177, 0.55);
+    color: rgba(95, 95, 95, 0.45);
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .submit-icon svg {
-  display: block;
-  width: 18px;
-  height: 18px;
+    display: block;
+    width: 18px;
+    height: 18px;
 }
 
 .rsvp-thanks {
@@ -486,37 +478,37 @@
 }
 
 .flash-toast {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%);
-  z-index: 9999;
-  width: auto;
-  padding: 0 12px;
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: auto;
+    padding: 0 12px;
 }
 
 .flash-toast__content {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(225, 210, 177, 0.9);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  font-family: "Playfair Display", serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--rsvp-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(225, 210, 177, 0.9);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    font-family: "Playfair Display", serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--rsvp-text);
 }
 
 .flash-toast__content--success {
-  color: var(--rsvp-gold);
+    color: var(--rsvp-gold);
 }
 
 .flash-toast__content--error {
-  color: #c0392b;
-  border-color: rgba(192, 57, 43, 0.25);
+    color: #c0392b;
+    border-color: rgba(192, 57, 43, 0.25);
 }
 
 /* TABLET */
@@ -616,9 +608,12 @@
         font-size: 0.84rem;
     }
 
-    .field-icon {
-        width: 19px;
-        height: 19px;
+    :host {
+        --field-icon-box-size: 22px;
+    }
+
+    .form-field__label {
+        font-size: 0.88rem;
     }
 
 }
@@ -691,9 +686,12 @@
         font-size: 0.88rem;
     }
 
-    .field-icon {
-        width: 20px;
-        height: 20px;
+    :host {
+        --field-icon-box-size: 23px;
+    }
+
+    .form-field__label {
+        font-size: 0.92rem;
     }
 
 }

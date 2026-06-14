@@ -88,7 +88,7 @@
 
         <label class="form-field">
             <span class="form-field__label">
-                <img src="assets/images/rsvp-meal.png" alt="" class="field-icon" />
+                <img src="assets/images/rsvp-meal3.png" alt="" class="field-icon" />
                 Stravovací omezení
             </span>
 
@@ -98,29 +98,21 @@
 
         <label class="form-field">
             <span class="form-field__label">
-                <img src="assets/images/rsvp-note.png" alt="" class="field-icon" />
+                <img src="assets/images/rsvp-note3.png" alt="" class="field-icon" />
                 Poznámka
             </span>
 
             <textarea formControlName="note" placeholder="Máte pro nás nějakou poznámku?"></textarea>
         </label>
 
-<button class="submit-button" type="submit" [disabled]="rsvpForm.invalid">
-  <span class="submit-icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 21l19-9-19-9v7l13 2-13 2v7z" />
-    </svg>
-  </span>
-  Odeslat odpověď
-</button>
-        <!--
-        <p *ngIf="submitted" class="rsvp-success">
-            Děkujeme, odpověď byla odeslána.
-        </p>
-
-        <p *ngIf="submitError" class="rsvp-error">
-            {{ submitError }}
-        </p>-->
+        <button class="submit-button" type="submit" [disabled]="rsvpForm.invalid">
+            <span class="submit-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 21l19-9-19-9v7l13 2-13 2v7z" />
+                </svg>
+            </span>
+            Odeslat odpověď
+        </button>
     </form>
 
     <div class="flash-toast" *ngIf="flashMessageType">

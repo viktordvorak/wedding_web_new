@@ -7,7 +7,7 @@ const allowedOrigins = [
   'https://baruaviktor.cz',
 ];
 
-export default async function handler(req: any, res: any) {
+module.exports = async function handler(req: any, res: any) {
   const origin = req.headers.origin;
 
   if (origin && allowedOrigins.includes(origin)) {
@@ -23,7 +23,7 @@ export default async function handler(req: any, res: any) {
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
+    return res.status(405).json({ ok: false, message: 'Method not allowed' });
   }
 
   const appsScriptUrl = process.env['GOOGLE_APPS_SCRIPT_URL'];
@@ -60,12 +60,10 @@ export default async function handler(req: any, res: any) {
       response: text,
     });
   } catch (error: any) {
-    console.error('RSVP submit failed:', error);
-
     return res.status(500).json({
       ok: false,
       message: 'RSVP submit failed',
       error: error?.message ?? String(error),
     });
   }
-}
+};
