@@ -21,10 +21,13 @@ module.exports = async function handler(req, res) {
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).json({ ok: false, message: 'Method not allowed' });
+    return res.status(405).json({
+      ok: false,
+      message: 'Method not allowed',
+    });
   }
 
-  const appsScriptUrl = process.env['GOOGLE_APPS_SCRIPT_URL'];
+  const appsScriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL;
 
   if (!appsScriptUrl) {
     return res.status(500).json({
@@ -57,11 +60,11 @@ module.exports = async function handler(req, res) {
       ok: true,
       response: text,
     });
-  } catch (error: any) {
+  } catch (error) {
     return res.status(500).json({
       ok: false,
       message: 'RSVP submit failed',
-      error: error?.message ?? String(error),
+      error: error && error.message ? error.message : String(error),
     });
   }
 };
