@@ -96,7 +96,7 @@
 
 .date-icon {
   position: absolute;
-  left: calc(50% - 115px);
+  left: calc(50% - 105px);
   top: 50%;
   transform: translateY(-50%);
   width: 32px;
@@ -122,14 +122,14 @@
 .heart-divider__line {
   width: 48px;
   height: 1px;
-  background: rgb(200, 169, 106);/*rgba(201, 166, 70, 0.7);*/
+  background: #D3A650;/*rgb(200, 169, 106);*/
   flex-shrink: 0;
 }
 
 .heart-divider__icon {
   width: 16px;
   height: 16px;
-  color: rgb(200, 169, 106);
+  color: rgb(211, 166, 80);
   flex-shrink: 0;
 }
 
@@ -194,7 +194,7 @@
   .date-icon {
     width: 36px;
     max-width: 36px;
-    left: calc(50% - 155px);
+    left: calc(50% - 140px);
   }
 
   .heart-divider {
@@ -254,7 +254,7 @@
   .date-icon {
     width: 42px;
     max-width: 42px;
-    left: calc(50% - 175px);
+    left: calc(50% - 158px);
   }
 
   .heart-divider {

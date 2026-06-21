@@ -36,14 +36,14 @@ export class RvspPageComponent {
   ) { }
 
   onSubmit(): void {
-    if (this.rsvpForm.invalid) {
+    if (this.rsvpForm.invalid || this.submitted) {
       this.rsvpForm.markAllAsTouched();
       return;
     }
+    this.submitted = true;
 
     this.service.submitRsvp(this.rsvpForm.getRawValue()).subscribe({
       next: () => {
-        this.submitted = true;
         this.flashMessage = 'Odeslání proběhlo úspěšně. Děkujeme!';
         this.flashMessageType = 'success';
         setTimeout(() => {
@@ -62,6 +62,7 @@ export class RvspPageComponent {
         }, 1800);
       },
       error: () => {
+        this.submitted = false;
         this.flashMessage = 'Odeslání se nepodařilo. Zkuste to prosím znovu.';
         this.flashMessageType = 'error';
 

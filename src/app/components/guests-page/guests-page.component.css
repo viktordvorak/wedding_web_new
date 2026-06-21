@@ -212,7 +212,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4px;
+  /* drobné zvednutí, aby celková výška odpovídala položkám se jménem */
+  margin-top: -2.63px;
+  line-height: 0;
 }
 
 .guest-pair__question-icon {
@@ -289,9 +291,20 @@
     margin-bottom: 4px;
   }
 
+  /* zvětšit otazníkovou ikonku na tabletu, aby výška položky odpovídala textu */
+  .guest-pair__question-icon {
+    width: 26px;
+    height: 26px;
+  }
+
   .section__heading {
     margin-bottom: 24px;
     font-size: 1.15rem;
+  }
+
+  /* jemné doladění ve větších rozlišeních: zvýšit negativní posun, aby výšky byly stejné */
+  .guest-pair__placeholder {
+    margin-top: -3.21px;
   }
 
 }
@@ -352,6 +365,12 @@
     font-size: 1rem;
   }
 
+  /* zvětšit otazníkovou ikonku na desktopu, aby výška položky odpovídala textu */
+  .guest-pair__question-icon {
+    width: 28px;
+    height: 28px;
+  }
+
   .guest-column__icon {
     margin-bottom: 6px;
   }
@@ -359,6 +378,11 @@
   .section__heading {
     margin-bottom: 28px;
     font-size: 1.25rem;
+  }
+
+  /* jemné doladění na desktopu: zvýšit negativní posun, aby výšky byly stejné */
+  .guest-pair__placeholder {
+    margin-top: -3.21px;
   }
 
 }

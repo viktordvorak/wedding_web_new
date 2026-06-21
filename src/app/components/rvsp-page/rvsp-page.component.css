@@ -436,6 +436,11 @@
     color: rgba(95, 95, 95, 0.45);
     cursor: not-allowed;
     box-shadow: none;
+    opacity: 0.6;
+}
+
+.submit-button:disabled:hover {
+  transform: none;
 }
 
 .submit-icon svg {
