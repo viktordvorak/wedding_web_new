@@ -5,6 +5,9 @@
   --guest-icon-width: 82px;
   --guest-icon-height: 52px;
   --guest-column-gap: 14px;
+  --guest-name-size: 0.82rem;
+  --guest-name-line-height: 1.5;
+  --guest-placeholder-offset: 2px;
 }
 
 .quest-page {
@@ -194,8 +197,8 @@
 .guest-pair__name {
   display: block;
   font-family: "Playfair Display", serif;
-  font-size: 0.82rem;
-  line-height: 1.5;
+  font-size: var(--guest-name-size);
+  line-height: var(--guest-name-line-height);
   color: #6d625c;
 }
 
@@ -211,13 +214,15 @@
 .guest-pair__placeholder {
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* drobné zvednutí, aby celková výška odpovídala položkám se jménem */
-  margin-top: -2.63px;
+  align-items: flex-start;
+  height: calc(var(--guest-name-size) * var(--guest-name-line-height));
+  box-sizing: border-box;
+  overflow: visible;
   line-height: 0;
 }
 
 .guest-pair__question-icon {
+  display: block;
   width: 22px;
   height: 22px;
   fill: none;
@@ -225,6 +230,7 @@
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transform: translateY(var(--guest-placeholder-offset));
 }
 
 /* TABLET */
@@ -233,6 +239,8 @@
   :host {
     --guest-icon-height: 62px;
     --guest-column-gap: 36px;
+    --guest-name-size: 0.95rem;
+    --guest-placeholder-offset: 3px;
   }
 
   .quest-page {
@@ -283,10 +291,6 @@
     margin-bottom: 24px;
   }
 
-  .guest-pair__name {
-    font-size: 0.95rem;
-  }
-
   .guest-column__icon {
     margin-bottom: 4px;
   }
@@ -302,11 +306,6 @@
     font-size: 1.15rem;
   }
 
-  /* jemné doladění ve větších rozlišeních: zvýšit negativní posun, aby výšky byly stejné */
-  .guest-pair__placeholder {
-    margin-top: -3.21px;
-  }
-
 }
 
 /* DESKTOP */
@@ -315,6 +314,8 @@
   :host {
     --guest-icon-height: 68px;
     --guest-column-gap: 52px;
+    --guest-name-size: 1rem;
+    --guest-placeholder-offset: 4px;
   }
 
   .quest-page {
@@ -361,10 +362,6 @@
     margin-bottom: 28px;
   }
 
-  .guest-pair__name {
-    font-size: 1rem;
-  }
-
   /* zvětšit otazníkovou ikonku na desktopu, aby výška položky odpovídala textu */
   .guest-pair__question-icon {
     width: 28px;
@@ -378,11 +375,6 @@
   .section__heading {
     margin-bottom: 28px;
     font-size: 1.25rem;
-  }
-
-  /* jemné doladění na desktopu: zvýšit negativní posun, aby výšky byly stejné */
-  .guest-pair__placeholder {
-    margin-top: -3.21px;
   }
 
 }
