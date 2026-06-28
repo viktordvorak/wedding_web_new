@@ -5,7 +5,7 @@
 
 .page-footer {
   width: 100%;
-  max-width: 760px;
+  max-width: 100%;
   margin: 20px auto 0;
   padding: 12px 0 4px;
   text-align: center;
@@ -29,8 +29,8 @@
 .page-footer p {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  font-size: 0.78rem;
-  line-height: 1.4;
+  font-size: 0.94rem;
+  line-height: 1.45;
   color: var(--color-text);
   opacity: 0.68;
 }
@@ -42,16 +42,16 @@
   }
 
   .page-footer p {
-    font-size: 0.82rem;
+    font-size: 0.98rem;
   }
 }
 
 @media (min-width: 900px) {
   .page-footer {
-    margin-top: 28px;
+    margin-top: 24px;
   }
 
   .page-footer p {
-    font-size: 0.86rem;
+    font-size: 1rem;
   }
 }

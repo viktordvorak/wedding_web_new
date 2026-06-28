@@ -1,4 +1,5 @@
 .welcome {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +50,7 @@
   justify-content: center;
   gap: 12px;
   margin-bottom: 28px;
-  font-size: 12px;
+  font-size: 12.5px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -82,7 +83,7 @@
   font-family: 'Playfair Display', serif;
   font-weight: 500;
   font-style: italic;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.2;
   color: #555;
 }
@@ -99,8 +100,8 @@
   left: calc(50% - 105px);
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
-  max-width: 32px;
+  width: 30px;
+  max-width: 30px;
   height: auto;
 }
 
@@ -155,59 +156,68 @@
 
 @media (min-width: 768px) {
   .welcome {
-    max-width: 500px;
-    padding: 60px 24px;
+    max-width: 100%;
+    padding: 52px 20px;
   }
 
   .top-logo img {
-    width: 300px;
+    width: 272px;
     max-width: 75vw;
   }
 
   .names {
-    font-size: 44px;
-    margin-bottom: 40px;
+    font-size: 38px;
+    line-height: 1.24;
+    margin-bottom: 34px;
   }
 
   .amp {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .subtitle {
-    margin-bottom: 34px;
+    margin-bottom: 30px;
+    font-size: 13.5px;
+    letter-spacing: 0.2em;
   }
 
   .subtitle::before,
   .subtitle::after {
-    max-width: 110px;
+    max-width: 92px;
   }
 
   .date-group {
-    gap: 10px;
-    margin-bottom: 52px;
+    gap: 8px;
+    margin-bottom: 44px;
   }
 
   .date {
-    font-size: 24px;
+    font-size: 17px;
+    line-height: 1.18;
   }
 
   .date-icon {
-    width: 36px;
-    max-width: 36px;
-    left: calc(50% - 140px);
+    width: 32px;
+    max-width: 32px;
+    left: calc(50% - 112px);
   }
 
   .heart-divider {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   .heart-divider__line {
-    width: 56px;
+    width: 50px;
   }
 
   .heart-divider__icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .cta {
+    min-width: 190px;
+    min-height: 44px;
   }
 }
 
@@ -215,62 +225,68 @@
 
 @media (min-width: 900px) {
   .welcome {
-    max-width: 560px;
-    padding: 80px 32px;
+    max-width: 100%;
+    padding: 56px 22px;
   }
 
   .top-logo img {
-    width: 340px;
-    max-width: none;
+    width: 286px;
+    max-width: 75vw;
   }
 
   .names {
-    font-size: 52px;
-    margin-bottom: 48px;
+    font-size: 40px;
+    line-height: 1.24;
+    margin-bottom: 36px;
   }
 
   .amp {
-    font-size: 38px;
+    font-size: 31px;
   }
 
   .subtitle {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    letter-spacing: 0.22em;
   }
 
   .subtitle::before,
   .subtitle::after {
-    max-width: 140px;
+    max-width: 98px;
   }
 
   .date-group {
-    gap: 12px;
-    margin-bottom: 60px;
+    gap: 9px;
+    margin-bottom: 46px;
   }
 
   .date {
-    font-size: 26px;
+    font-size: 18px;
+    line-height: 1.18;
   }
 
   .date-icon {
-    width: 42px;
-    max-width: 42px;
-    left: calc(50% - 158px);
+    width: 33px;
+    max-width: 33px;
+    left: calc(50% - 118px);
   }
 
   .heart-divider {
-    margin: 12px 0;
+    margin: 9px 0;
   }
 
   .heart-divider__line {
-    width: 64px;
+    width: 52px;
   }
 
   .heart-divider__icon {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
   }
 
   .cta {
-    padding: 12px 28px;
+    min-width: 196px;
+    min-height: 46px;
+    padding: 10px 24px;
   }
 }
