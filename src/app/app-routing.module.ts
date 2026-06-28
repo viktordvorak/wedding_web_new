@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SchedulePageComponent } from './components/schedule-page/schedule-page.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GuestsPageComponent } from './components/guests-page/guests-page.component';
 import { PlacePageComponent } from './components/place-page/place-page.component';
+import { RvspPageComponent } from './components/rvsp-page/rvsp-page.component';
 
 const routes: Routes = [
   {path: 'welcome-page', component: WelcomePageComponent, data: { animation: 'welcome' }},
   {path: 'place-page', component: PlacePageComponent, data: { animation: 'info' }},
-  {path: 'schedule-page', component: SchedulePageComponent},
+  {path: 'rsvp-page', component: RvspPageComponent},
   {path: 'gallery-page', component: GalleryComponent},
   {path: 'guests-page', component: GuestsPageComponent},
   {path: '', redirectTo: '/welcome-page', pathMatch: 'full'},

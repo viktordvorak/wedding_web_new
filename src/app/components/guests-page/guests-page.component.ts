@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-guests-page',
-    imports: [NavigationPageComponent, FooterPageComponent, RouterOutlet],
+  imports: [NavigationPageComponent, FooterPageComponent, RouterOutlet],
   templateUrl: './guests-page.component.html',
   styleUrl: './guests-page.component.css'
 })

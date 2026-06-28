@@ -90,31 +90,22 @@
 
 .info-intro--shadow-gold-soft::before {
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -34%);
-  width: 220px;
-  height: 92px;
-  background: rgba(201, 166, 70, 0.06);
-  box-shadow:
-    0 10px 24px rgba(201, 166, 70, 0.1),
-    0 18px 42px rgba(201, 166, 70, 0.07),
-    0 0 34px rgba(201, 166, 70, 0.05);
-  filter: blur(10px);
-  opacity: 0.95;
+  top: 56%;
+  transform: translate(-50%, -48%);
+  width: 260px;
+  height: 100px;
+  background: radial-gradient(ellipse 130px 50px at 50% 52%, rgba(201, 166, 70, 0.18), rgba(201, 166, 70, 0.08) 55%, transparent 95%);
+  opacity: 0.85;
 }
 
 .info-intro--shadow-gold-soft::after {
   left: 50%;
-  top: 50%;
-  transform: translate(-56%, -28%) rotate(-4deg);
-  width: 160px;
-  height: 70px;
-  background: rgba(201, 166, 70, 0.035);
-  box-shadow:
-    0 8px 18px rgba(201, 166, 70, 0.06),
-    0 0 20px rgba(201, 166, 70, 0.04);
-  filter: blur(8px);
-  opacity: 0.8;
+  top: 58%;
+  transform: translate(-50%, -60%) rotate(-2deg);
+  width: 210px;
+  height: 60px;
+  background: radial-gradient(ellipse 100px 30px at 50% 50%, rgba(201, 166, 70, 0.1), transparent 92%);
+  opacity: 0.65;
 }
 
 /* CARDS */
@@ -373,6 +364,49 @@
   letter-spacing: 0.04em;
 }
 
+.rsvp-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0;
+
+  width: fit-content;
+  margin: 14px auto 16px;
+
+  text-decoration: none;
+  color: #c9a646;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.rsvp-link span {
+  margin-top: 4px;
+}
+
+.rsvp-link__icon {
+  width: 26px;
+  height: 26px;
+
+  display: block;
+  fill: none;
+  stroke: #c9a646;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+}
+
+.rsvp-link:hover {
+  opacity: 0.78;
+}
+
 /* TABLET */
 
 @media (min-width: 768px) {
@@ -474,99 +508,125 @@
     line-height: 1.8;
   }
 
+  .rsvp-link {
+    font-size: 17px;
+  }
+
+  .rsvp-link__icon {
+    width: 28px;
+    height: 28px;
+  }
+
 }
 
 /* DESKTOP */
 
 @media (min-width: 1024px) {
   :host {
-    --section-icon-place-size: 50px;
-    --section-icon-program-size: 48px;
-    --section-icon-info-size: 47px;
-    --section-icon-line-width: 56px;
+    --section-icon-place-size: 44px;
+    --section-icon-program-size: 42px;
+    --section-icon-info-size: 41px;
+    --section-icon-line-width: 48px;
 
-    --icon-phone-size: 25px;
-    --icon-whatsapp-size: 26px;
-    --icon-map-size: 1.34em;
-    --icon-stroke-width: 1.55;
-    --icon-gap: 13px;
+    --icon-phone-size: 23px;
+    --icon-whatsapp-size: 24px;
+    --icon-map-size: 1.28em;
+    --icon-stroke-width: 1.5;
+    --icon-gap: 12px;
   }
 
   .instruction-page {
-    padding: 12px 0 24px;
-    gap: 20px;
+    padding: 10px 0 20px;
+    gap: 18px;
   }
 
   .info-intro {
-    padding: 20px 24px 12px;
+    padding: 18px 20px 10px;
   }
 
   .info-intro__title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+  }
+
+  .info-intro__divider {
+    gap: 16px;
+    margin-top: 18px;
   }
 
   .info-intro__line {
-    width: 78px;
+    width: 70px;
   }
 
   .info-intro__text {
-    max-width: 320px;
-    font-size: 1rem;
+    max-width: 290px;
+    margin-top: 16px;
+    font-size: 0.95rem;
   }
 
   .info-card {
-    padding: 22px 24px 20px;
-    border-radius: 24px;
+    padding: 20px 20px 18px;
+    border-radius: 22px;
   }
 
   .section-header {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .section-header__icon-row {
-    gap: 18px;
-    margin-bottom: 9px;
+    gap: 16px;
+    margin-bottom: 8px;
   }
 
   .section__heading {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
   }
 
   .event-date {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   .event-place,
   .event-city {
-    font-size: 0.96rem;
+    font-size: 0.92rem;
   }
 
   .info-card--text .card-content {
-    max-width: 520px;
+    max-width: 460px;
   }
 
   .info-card--text .card-content p {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
 
   .rsvp-text {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   .signatures {
-    margin-top: 18px;
+    margin-top: 16px;
   }
 
   .signatures img {
-    max-width: 185px;
+    max-width: 170px;
   }
 
   .contact-inline-vertical {
-    gap: 44px;
+    gap: 36px;
   }
 
   .contact-inline-vertical__name {
-    font-size: 1.14rem;
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .rsvp-link {
+    font-size: 17px;
+  }
+
+  .rsvp-link__icon {
+    width: 28px;
+    height: 28px;
   }
 
 }

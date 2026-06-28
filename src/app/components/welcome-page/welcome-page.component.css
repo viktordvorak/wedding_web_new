@@ -1,4 +1,5 @@
 .welcome {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,9 +9,7 @@
   margin: 0 auto;
 }
 
-/* ------------------ */
 /* LOGO */
-/* ------------------ */
 
 .top-logo {
   width: 100%;
@@ -27,16 +26,13 @@
   display: block;
 }
 
-/* ------------------ */
 /* NAMES */
-/* ------------------ */
 
 .names {
   font-family: 'Great Vibes', cursive;
   font-size: 36px;
   line-height: 1.3;
   margin-bottom: 32px;
-  /*color: var(--color-text);*/
   color: #555;
 }
 
@@ -45,20 +41,7 @@
   color: var(--color-accent);
 }
 
-/* ------------------ */
-/* DIVIDER */
-/* ------------------ */
-
-.divider {
-  width: 80px;
-  height: 1px;
-  background: var(--color-border);
-  margin: 16px 0 24px;
-}
-
-/* ------------------ */
 /* SUBTITLE */
-/* ------------------ */
 
 .subtitle {
   width: 100%;
@@ -66,175 +49,244 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 12px;
-  font-size: 12px;
+  margin-bottom: 28px;
+  font-size: 12.5px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-accent);
 }
-
+/*
 .subtitle::before,
 .subtitle::after {
   content: "";
   flex: 1;
   height: 1px;
   max-width: 80px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-accent),
-    transparent
-  );
-}
+  background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+}*/
 
-/* ------------------ */
 /* DATE */
-/* ------------------ */
+
+.date-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 44px;
+}
 
 .date {
-  font-family: 'Great Vibes', cursive;
-  font-size: 22px;
-  margin-bottom: 24px;
-  color: var(--color-text);
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #555;
 }
 
-/* ------------------ */
-/* SMALL DECOR */
-/* ------------------ */
+.date-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-.small-divider {
-  width: 100%;
+.date-icon {
+  position: absolute;
+  left: calc(50% - 105px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  max-width: 30px;
+  height: auto;
+}
+
+.date br {
+  line-height: 1.2;
+}
+
+/* HEART DIVIDER */
+
+.heart-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 24px;
+  width: 100%;
+  margin: 8px 0;
 }
 
-.small-divider::before,
-.small-divider::after {
-  content: "";
-  flex: 1;
+.heart-divider__line {
+  width: 48px;
   height: 1px;
-  max-width: 100px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--color-accent),
-    transparent
-  );
-}
-
-.small-divider span {
-  width: 8px;
-  height: 8px;
-  border: 1px solid var(--color-accent);
-  transform: rotate(45deg);
+  background: #D3A650;/*rgb(200, 169, 106);*/
   flex-shrink: 0;
 }
 
-/* ------------------ */
+.heart-divider__icon {
+  width: 16px;
+  height: 16px;
+  color: rgb(211, 166, 80);
+  flex-shrink: 0;
+}
+
 /* LOCATION */
-/* ------------------ */
 
 .location {
   margin-bottom: 32px;
   line-height: 1.6;
 }
 
-/* ------------------ */
 /* BUTTON */
-/* ------------------ */
 
 .cta {
   min-width: 180px;
 }
 
 .cta a {
-  text-decoration:none;
+  text-decoration: none;
   color: inherit;
-
 }
 
-
-/* ------------------ */
 /* TABLET */
-/* ------------------ */
 
 @media (min-width: 768px) {
   .welcome {
-    max-width: 500px;
-    padding: 60px 24px;
+    max-width: 100%;
+    padding: 52px 20px;
   }
 
   .top-logo img {
-    width: 300px;
+    width: 272px;
     max-width: 75vw;
   }
 
   .names {
-    font-size: 44px;
-    margin-bottom: 40px;
-  }
-
-  .amp {
-    font-size: 34px;
-  }
-
-  .date {
-    font-size: 24px;
-  }
-
-  .subtitle::before,
-  .subtitle::after {
-    max-width: 110px;
-  }
-
-  .small-divider::before,
-  .small-divider::after {
-    max-width: 140px;
-  }
-}
-
-/* ------------------ */
-/* DESKTOP */
-/* ------------------ */
-
-@media (min-width: 900px) {
-  .welcome {
-    max-width: 560px;
-    padding: 80px 32px;
-  }
-
-  .top-logo img {
-    width: 340px;
-    max-width: none;
-  }
-
-  .names {
-    font-size: 52px;
-    margin-bottom: 48px;
-  }
-
-  .amp {
     font-size: 38px;
+    line-height: 1.24;
+    margin-bottom: 34px;
   }
 
-  .date {
-    font-size: 26px;
+  .amp {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+    font-size: 13.5px;
+    letter-spacing: 0.2em;
   }
 
   .subtitle::before,
   .subtitle::after {
-    max-width: 140px;
+    max-width: 92px;
   }
 
-  .small-divider::before,
-  .small-divider::after {
-    max-width: 180px;
+  .date-group {
+    gap: 8px;
+    margin-bottom: 44px;
+  }
+
+  .date {
+    font-size: 17px;
+    line-height: 1.18;
+  }
+
+  .date-icon {
+    width: 32px;
+    max-width: 32px;
+    left: calc(50% - 112px);
+  }
+
+  .heart-divider {
+    margin: 8px 0;
+  }
+
+  .heart-divider__line {
+    width: 50px;
+  }
+
+  .heart-divider__icon {
+    width: 16px;
+    height: 16px;
   }
 
   .cta {
-    padding: 12px 28px;
+    min-width: 190px;
+    min-height: 44px;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+  .welcome {
+    max-width: 100%;
+    padding: 56px 22px;
+  }
+
+  .top-logo img {
+    width: 286px;
+    max-width: 75vw;
+  }
+
+  .names {
+    font-size: 40px;
+    line-height: 1.24;
+    margin-bottom: 36px;
+  }
+
+  .amp {
+    font-size: 31px;
+  }
+
+  .subtitle {
+    margin-bottom: 32px;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+  }
+
+  .subtitle::before,
+  .subtitle::after {
+    max-width: 98px;
+  }
+
+  .date-group {
+    gap: 9px;
+    margin-bottom: 46px;
+  }
+
+  .date {
+    font-size: 18px;
+    line-height: 1.18;
+  }
+
+  .date-icon {
+    width: 33px;
+    max-width: 33px;
+    left: calc(50% - 118px);
+  }
+
+  .heart-divider {
+    margin: 9px 0;
+  }
+
+  .heart-divider__line {
+    width: 52px;
+  }
+
+  .heart-divider__icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .cta {
+    min-width: 196px;
+    min-height: 46px;
+    padding: 10px 24px;
   }
 }
