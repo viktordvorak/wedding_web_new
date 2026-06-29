@@ -37,6 +37,10 @@ import {
 export class AppComponent {
   title = 'wedding-web';
 
+  isPlaceRoute(outlet: RouterOutlet): boolean {
+    return !!outlet?.isActivated && outlet.activatedRoute.routeConfig?.path === 'place-page';
+  }
+
   prepareRoute(outlet: RouterOutlet): string {
     if (!outlet || !outlet.isActivated) {
       return '';

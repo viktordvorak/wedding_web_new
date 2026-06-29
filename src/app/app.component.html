@@ -1,6 +1,10 @@
 <div class="app-container">
-  <div class="page-frame">
-    <div class="page-content" [@routeAnimations]="prepareRoute(outlet)">
+  <div class="page-frame" [class.page-frame--place]="isPlaceRoute(outlet)">
+    <div
+      class="page-content"
+      [class.page-content--place]="isPlaceRoute(outlet)"
+      [@routeAnimations]="prepareRoute(outlet)"
+    >
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </div>

@@ -22,6 +22,10 @@
   padding: 28px 24px;
 }
 
+.page-frame--place {
+  overflow: hidden;
+}
+
 /* vnitřní rámeček */
 .page-frame::before {
   content: "";
@@ -30,6 +34,7 @@
   border: 1px solid var(--color-border);
   border-radius: 20px;
   pointer-events: none;
+  z-index: 2;
 }
 
 /* obsah */
@@ -42,6 +47,10 @@
 
 }
 
+.page-content--place {
+  overflow: visible;
+}
+
 /* TABLET */
 @media (min-width: 768px) {
   .app-container {
@@ -49,7 +58,7 @@
   }
 
   .page-frame {
-    max-width: 560px;
+    max-width: 520px;
     padding: 34px 28px;
     border-radius: 28px;
   }
@@ -71,7 +80,7 @@
   }
 
   .page-frame {
-    max-width: 560px;
+    max-width: 520px;
     padding: 34px 28px;
     border-radius: 28px;
   }
