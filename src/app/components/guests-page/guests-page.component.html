@@ -1,23 +1,23 @@
-<app-navigation-page></app-navigation-page>
+<section class="quest-page route-stack">
+  <section class="route-card route-card--hero route-card--guest-hero">
+    <section class="guest-hero">
+      <app-navigation-page></app-navigation-page>
 
-<section class="quest-page">
-  <section class="info-intro info-intro--shadow-gold-soft">
-    <h1 class="info-intro__title">Kdo s kým</h1>
-    <!--
-    <div class="info-intro__divider" aria-hidden="true">
-      <span class="info-intro__line"></span>
-      <span class="info-intro__diamond"></span>
-      <span class="info-intro__line"></span>
-    </div>-->
+      <section class="info-intro info-intro--shadow-gold-soft">
+        <h1 class="info-intro__title">Kdo s kým</h1>
 
-    <p class="info-intro__text">
-      Všichni, kteří s námi oslaví<br />
-      náš velký den.
-    </p>
+        <p class="info-intro__text">
+          Všichni, kteří s námi oslaví<br />
+          náš velký den.
+        </p>
+      </section>
+    </section>
   </section>
 
-  <section class="guest-list guest-list--two-columns">
-    <div class="guest-column">
+  <section class="guest-cards">
+    <section class="route-card route-card--section route-card--guest-list">
+      <section class="guest-list">
+      <div class="guest-column">
       <div class="guest-column__icon" aria-hidden="true">
         <img src="assets/images/crown.png" alt="" class="guest-column__image guest-column__image--crown" />
       </div>
@@ -169,9 +169,13 @@
         <span class="guest-pair__amp">&amp;</span>
         <span class="guest-pair__name">Ivoš Čuma</span>
       </div>
-    </div>
+      </div>
+      </section>
+    </section>
 
-    <div class="guest-column">
+    <section class="route-card route-card--section route-card--guest-list">
+      <section class="guest-list">
+      <div class="guest-column">
       <div class="guest-column__icon" aria-hidden="true">
         <img src="assets/images/bowtie.png" alt="" class="guest-column__image guest-column__image--bowtie" />
       </div>
@@ -349,8 +353,12 @@
             </svg>
           </span></span>
       </div>
-    </div>
+      </div>
+      </section>
+    </section>
+  </section>
+
+  <section class="route-card route-card--footer">
+    <app-footer-page></app-footer-page>
   </section>
 </section>
-
-<app-footer-page></app-footer-page>

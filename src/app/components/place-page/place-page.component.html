@@ -1,48 +1,50 @@
-<section class="instruction-page">
-  <section class="place-hero">
-    <app-navigation-page></app-navigation-page>
+<section class="instruction-page route-stack">
+  <section class="route-card route-card--hero route-card--place-hero">
+    <section class="place-hero">
+      <app-navigation-page></app-navigation-page>
 
-    <section class="info-intro info-intro--shadow-gold-soft">
-      <h1 class="info-intro__title">Kdy, kde, co a jak</h1>
+      <section class="info-intro info-intro--shadow-gold-soft">
+        <h1 class="info-intro__title">Kdy, kde, co a jak</h1>
 
-      <p class="info-intro__text">
-        Tady najdete vše důležité<br />
-        na jednom místě.
-      </p>
-    </section>
-
-    <section class="info-card info-card--wide info-card--event">
-      <header class="section-header">
-        <div class="section-header__icon-row" aria-hidden="true">
-          <span class="section-header__line"></span>
-          <img src="/assets/images/place.png" alt="" class="section-header__icon section-header__icon--place" />
-          <span class="section-header__line"></span>
-        </div>
-
-        <h2 class="section__heading">Kdy a kde</h2>
-      </header>
-
-      <div class="card-content card-content--center">
-        <p class="event-date">29. srpna 2026</p>
-        <p class="event-date">v 15:00</p>
-
-        <p class="event-place">
-          <a href="https://maps.google.com/?q=Hostinec u Kovářů Železné" target="_blank" class="event-link">
-            Hostinec u Kovářů, Železné
-
-            <span class="map-icon">
-              <svg viewBox="0 0 24 24" class="map-pin-icon" fill="none" aria-hidden="true">
-                <path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10Z" />
-                <circle cx="12" cy="11" r="2" />
-              </svg>
-            </span>
-          </a>
+        <p class="info-intro__text">
+          Tady najdete vše důležité<br />
+          na jednom místě.
         </p>
-      </div>
+      </section>
     </section>
   </section>
 
-  <section class="info-card info-card--text">
+  <section class="route-card route-card--section route-card--event">
+    <header class="section-header">
+      <div class="section-header__icon-row" aria-hidden="true">
+        <span class="section-header__line"></span>
+        <img src="/assets/images/place.png" alt="" class="section-header__icon section-header__icon--place" />
+        <span class="section-header__line"></span>
+      </div>
+
+      <h2 class="section__heading">Kdy a kde</h2>
+    </header>
+
+    <div class="card-content card-content--center">
+      <p class="event-date">29. srpna 2026</p>
+      <p class="event-date">v 15:00</p>
+
+      <p class="event-place">
+        <a href="https://maps.google.com/?q=Hostinec u Kovářů Železné" target="_blank" class="event-link">
+          Hostinec u Kovářů, Železné
+
+          <span class="map-icon">
+            <svg viewBox="0 0 24 24" class="map-pin-icon" fill="none" aria-hidden="true">
+              <path d="M12 21s-6-5.5-6-10a6 6 0 1 1 12 0c0 4.5-6 10-6 10Z" />
+              <circle cx="12" cy="11" r="2" />
+            </svg>
+          </span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="route-card route-card--section route-card--text">
     <header class="section-header">
       <div class="section-header__icon-row" aria-hidden="true">
         <span class="section-header__line"></span>
@@ -78,7 +80,7 @@
     </div>
   </section>
 
-  <section class="info-card info-card--wide">
+  <section class="route-card route-card--section route-card--confirm">
     <header class="section-header">
       <div class="section-header__icon-row" aria-hidden="true">
         <span class="section-header__line"></span>
@@ -94,6 +96,21 @@
         Prosíme o potvrzení účasti do <strong>30. června</strong>.<br />
         Viz. odkaz na formulář níže.
       </p>
+    </div>
+
+    <!--
+    <header class="section-header section-header--subsection">
+      <div class="section-header__icon-row" aria-hidden="true">
+        <span class="section-header__line"></span>
+        <img src="/assets/images/info.png" alt="" class="section-header__icon section-header__icon--info" />
+        <span class="section-header__line"></span>
+      </div>
+
+      <h2 class="section__heading">RSVP</h2>
+    </header>
+    -->
+
+    <div class="card-content card-content--center">
       <a class="rsvp-link" routerLink="/rsvp-page" routerLinkActive="is-active" aria-label="Přejít na RSVP formulář">
         <svg class="rsvp-link__icon" viewBox="0 0 24 24" aria-hidden="true">
           <rect x="3.5" y="6" width="17" height="12" rx="2" />
@@ -168,6 +185,8 @@
       </div>
     </div>
   </section>
-</section>
 
-<app-footer-page></app-footer-page>
+  <section class="route-card route-card--footer">
+    <app-footer-page></app-footer-page>
+  </section>
+</section>

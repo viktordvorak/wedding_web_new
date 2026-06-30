@@ -1,8 +1,13 @@
 <div class="app-container">
-  <div class="page-frame" [class.page-frame--place]="isPlaceRoute(outlet)">
+  <div
+    class="page-surface"
+    [class.page-surface--single]="!isMultiCardRoute(outlet)"
+    [class.page-surface--stack]="isMultiCardRoute(outlet)"
+  >
     <div
       class="page-content"
-      [class.page-content--place]="isPlaceRoute(outlet)"
+      [class.page-content--single]="!isMultiCardRoute(outlet)"
+      [class.page-content--stack]="isMultiCardRoute(outlet)"
       [@routeAnimations]="prepareRoute(outlet)"
     >
       <router-outlet #outlet="outlet"></router-outlet>
