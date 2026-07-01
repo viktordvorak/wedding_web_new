@@ -2,10 +2,9 @@
   display: block;
   width: 100%;
 
-  --gallery-hero-art-top: 62px;
-  --gallery-hero-art-height: 220px;
-  --gallery-hero-art-size: 118% auto;
-  --gallery-hero-art-bleed: 10px;
+  --gallery-hero-divider-color: rgba(201, 166, 70, 0.65);
+  --gallery-hero-nav-height: 72px;
+  --gallery-hero-art-height: 224px;
 }
 
 .gallery-page {
@@ -24,23 +23,37 @@
 
 .gallery-hero {
   position: relative;
-  padding: 24px 20px 0;
+  padding: 0 20px;
   overflow: hidden;
-  min-height: calc(var(--gallery-hero-art-top) + var(--gallery-hero-art-height));
+  min-height: calc(var(--gallery-hero-nav-height) + var(--gallery-hero-art-height));
+}
+
+.gallery-hero app-navigation-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+  min-height: var(--gallery-hero-nav-height);
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--gallery-hero-divider-color);
 }
 
 .gallery-hero::before {
   content: "";
   position: absolute;
-  top: var(--gallery-hero-art-top);
-  right: calc(var(--gallery-hero-art-bleed) * -1);
-  left: calc(var(--gallery-hero-art-bleed) * -1);
+  top: var(--gallery-hero-nav-height);
+  right: 0;
+  left: 0;
   bottom: 0;
   height: var(--gallery-hero-art-height);
-  background-image: url('/assets/images/header-background8.png');
-  background-position: center bottom;
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.22) 40%, rgba(0, 0, 0, 0.08) 100%),
+    url('/assets/images/header-background11.png');
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: var(--gallery-hero-art-size);
+  background-size: cover;
   pointer-events: none;
   border-radius: 0 0 24px 24px;
 }
@@ -61,10 +74,7 @@
 
 .info-intro {
   text-align: center;
-  padding: 16px 16px 8px;
   margin-bottom: 0;
-  position: relative;
-  z-index: 0;
 }
 
 .info-intro__title {
@@ -74,8 +84,9 @@
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
-  color: #c9a646;
+  color: #ffffff;
   text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro__divider {
@@ -108,7 +119,8 @@
   font-family: "Playfair Display", serif;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #726962;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro--shadow-gold-soft::before,
@@ -118,8 +130,20 @@
 
 @media (max-width: 389px) {
   :host {
-    --gallery-hero-art-size: 112% auto;
+    --gallery-hero-nav-height: 68px;
+    --gallery-hero-art-height: 214px;
   }
+}
+
+.gallery-hero > .info-intro {
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+  left: 20px;
+  margin: 0 auto;
+  max-width: 290px;
+  padding: 0;
+  z-index: 1;
 }
 
 /* ------------------ */
@@ -182,10 +206,8 @@
 
 @media (min-width: 768px) {
   :host {
-    --gallery-hero-art-top: 70px;
-    --gallery-hero-art-height: 286px;
-    --gallery-hero-art-size: 130% auto;
-    --gallery-hero-art-bleed: 14px;
+    --gallery-hero-nav-height: 80px;
+    --gallery-hero-art-height: 248px;
   }
 
   .gallery-page {
@@ -198,11 +220,22 @@
   }
 
   .gallery-hero {
-    padding: 30px 24px 0;
+    padding: 0 24px;
   }
 
-  .info-intro {
-    padding: 18px 20px 8px;
+  .gallery-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
+  }
+
+  .gallery-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 
   .info-intro__title {
@@ -248,10 +281,8 @@
 
 @media (min-width: 1024px) {
   :host {
-    --gallery-hero-art-top: 72px;
-    --gallery-hero-art-height: 296px;
-    --gallery-hero-art-size: 132% auto;
-    --gallery-hero-art-bleed: 16px;
+    --gallery-hero-nav-height: 80px;
+    --gallery-hero-art-height: 248px;
   }
 
   .gallery-page {
@@ -259,16 +290,27 @@
     gap: 14px;
   }
 
+  .gallery-hero {
+    padding: 0 24px;
+  }
+
+  .gallery-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
+  }
+
+  .gallery-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
+  }
+
   .route-card--gallery-hero {
     padding-bottom: 0;
-  }
-
-  .gallery-hero {
-    padding: 30px 24px 0;
-  }
-
-  .info-intro {
-    padding: 18px 20px 8px;
   }
 
   .info-intro__title {

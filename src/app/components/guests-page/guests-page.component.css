@@ -2,10 +2,9 @@
   display: block;
   width: 100%;
 
-  --guest-hero-art-top: 62px;
-  --guest-hero-art-height: 220px;
-  --guest-hero-art-size: 118% auto;
-  --guest-hero-art-bleed: 10px;
+  --guest-hero-divider-color: rgba(201, 166, 70, 0.65);
+  --guest-hero-nav-height: 72px;
+  --guest-hero-art-height: 224px;
   --guest-icon-width: 82px;
   --guest-icon-height: 52px;
   --guest-column-gap: 14px;
@@ -35,23 +34,37 @@
 
 .guest-hero {
   position: relative;
-  padding: 24px 20px 0;
+  padding: 0 20px;
   overflow: hidden;
-  min-height: calc(var(--guest-hero-art-top) + var(--guest-hero-art-height));
+  min-height: calc(var(--guest-hero-nav-height) + var(--guest-hero-art-height));
+}
+
+.guest-hero app-navigation-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+  min-height: var(--guest-hero-nav-height);
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--guest-hero-divider-color);
 }
 
 .guest-hero::before {
   content: "";
   position: absolute;
-  top: var(--guest-hero-art-top);
-  right: calc(var(--guest-hero-art-bleed) * -1);
-  left: calc(var(--guest-hero-art-bleed) * -1);
+  top: var(--guest-hero-nav-height);
+  right: 0;
+  left: 0;
   bottom: 0;
   height: var(--guest-hero-art-height);
-  background-image: url('/assets/images/header-background8.png');
-  background-position: center bottom;
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.22) 40%, rgba(0, 0, 0, 0.08) 100%),
+    url('/assets/images/header-background11.png');
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: var(--guest-hero-art-size);
+  background-size: cover;
   pointer-events: none;
   border-radius: 0 0 24px 24px;
 }
@@ -65,10 +78,7 @@
 
 .info-intro {
   text-align: center;
-  padding: 16px 16px 8px;
   margin-bottom: 0;
-  position: relative;
-  z-index: 0;
 }
 
 .info-intro__title {
@@ -78,8 +88,9 @@
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
-  color: #c9a646;
+  color: #ffffff;
   text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro__divider {
@@ -112,7 +123,8 @@
   font-family: "Playfair Display", serif;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #726962;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro--shadow-gold-soft::before,
@@ -122,8 +134,20 @@
 
 @media (max-width: 389px) {
   :host {
-    --guest-hero-art-size: 112% auto;
+    --guest-hero-nav-height: 68px;
+    --guest-hero-art-height: 214px;
   }
+}
+
+.guest-hero > .info-intro {
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+  left: 20px;
+  margin: 0 auto;
+  max-width: 290px;
+  padding: 0;
+  z-index: 1;
 }
 
 /* GUEST LIST */
@@ -259,10 +283,8 @@
 
 @media (min-width: 768px) {
   :host {
-    --guest-hero-art-top: 70px;
-    --guest-hero-art-height: 286px;
-    --guest-hero-art-size: 130% auto;
-    --guest-hero-art-bleed: 14px;
+    --guest-hero-nav-height: 80px;
+    --guest-hero-art-height: 248px;
     --guest-icon-height: 62px;
     --guest-column-gap: 36px;
     --guest-name-size: 0.95rem;
@@ -279,12 +301,31 @@
     gap: 18px;
   }
 
-  .info-intro {
-    padding: 18px 20px 10px;
+  .guest-hero {
+    padding: 0 24px;
+  }
+
+  .guest-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
+  }
+
+  .guest-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 
   .info-intro__title {
     font-size: 1.3rem;
+  }
+
+  .route-card--guest-hero {
+    padding-bottom: 0;
   }
 
   .info-intro__line {
@@ -294,14 +335,6 @@
   .info-intro__text {
     max-width: 290px;
     font-size: 0.95rem;
-  }
-
-  .route-card--guest-hero {
-    padding-bottom: 0;
-  }
-
-  .guest-hero {
-    padding: 30px 24px 0;
   }
 
   .guest-list {
@@ -356,10 +389,8 @@
 
 @media (min-width: 1024px) {
   :host {
-    --guest-hero-art-top: 72px;
-    --guest-hero-art-height: 296px;
-    --guest-hero-art-size: 132% auto;
-    --guest-hero-art-bleed: 16px;
+    --guest-hero-nav-height: 80px;
+    --guest-hero-art-height: 248px;
     --guest-icon-height: 62px;
     --guest-column-gap: 36px;
     --guest-name-size: 0.95rem;
@@ -371,7 +402,22 @@
   }
 
   .guest-hero {
-    padding: 30px 24px 0;
+    padding: 0 24px;
+  }
+
+  .guest-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
+  }
+
+  .guest-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 
   .quest-page {

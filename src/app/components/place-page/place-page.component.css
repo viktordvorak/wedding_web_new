@@ -2,10 +2,9 @@
   display: block;
   width: 100%;
 
-  --place-hero-art-top: 62px;
-  --place-hero-art-height: 220px;
-  --place-hero-art-size: 118% auto;
-  --place-hero-art-bleed: 10px;
+  --place-hero-divider-color: rgba(201, 166, 70, 0.65);
+  --place-hero-nav-height: 72px;
+  --place-hero-art-height: 224px;
   --section-icon-size: 32px;
   --section-icon-place-size: 38px;
   --section-icon-program-size: 36px;
@@ -31,30 +30,45 @@
 
 .place-hero {
   position: relative;
-  padding: 24px 20px 0;
+  padding: 0 20px;
   overflow: hidden;
-  min-height: calc(var(--place-hero-art-top) + var(--place-hero-art-height));
+  min-height: calc(var(--place-hero-nav-height) + var(--place-hero-art-height));
+}
+
+.place-hero app-navigation-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 -20px;
+  width: calc(100% + 40px);
+  min-height: var(--place-hero-nav-height);
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--place-hero-divider-color);
 }
 
 .place-hero::before {
   content: "";
   position: absolute;
-  top: var(--place-hero-art-top);
-  right: calc(var(--place-hero-art-bleed) * -1);
-  left: calc(var(--place-hero-art-bleed) * -1);
+  top: var(--place-hero-nav-height);
+  right: 0;
+  left: 0;
   bottom: 0;
   height: var(--place-hero-art-height);
-  background-image: url('/assets/images/header-background8.png');
-  background-position: center bottom;
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.22) 40%, rgba(0, 0, 0, 0.08) 100%),
+    url('/assets/images/header-background11.png');
+  background-position: center center;
   background-repeat: no-repeat;
-  background-size: var(--place-hero-art-size);
+  background-size: cover;
   pointer-events: none;
   border-radius: 0 0 24px 24px;
 }
 
 @media (max-width: 389px) {
   :host {
-    --place-hero-art-size: 112% auto;
+    --place-hero-nav-height: 68px;
+    --place-hero-art-height: 214px;
   }
 }
 
@@ -65,12 +79,16 @@
 
 /* INTRO */
 
-.info-intro {
+.place-hero > .info-intro {
+  position: absolute;
+  right: 20px;
+  bottom: 22px;
+  left: 20px;
+  margin: 0 auto;
+  max-width: 290px;
   text-align: center;
-  padding: 16px 16px 8px;
-  margin-bottom: 0;
-  position: relative;
-  z-index: 0;
+  padding: 0;
+  z-index: 1;
 }
 
 .info-intro__title {
@@ -80,8 +98,9 @@
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.04em;
-  color: #c9a646;
+  color: #ffffff;
   text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro__divider {
@@ -114,7 +133,8 @@
   font-family: "Playfair Display", serif;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #726962;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
 }
 
 .info-intro--shadow-gold-soft::before,
@@ -270,40 +290,61 @@
 
 @media (min-width: 768px) {
   :host {
-    --place-hero-art-top: 70px;
-    --place-hero-art-height: 286px;
-    --place-hero-art-size: 130% auto;
-    --place-hero-art-bleed: 14px;
+    --place-hero-nav-height: 80px;
+    --place-hero-art-height: 248px;
   }
 
   .place-hero {
-    padding: 30px 24px 0;
+    padding: 0 24px;
+  }
+
+  .place-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
+  }
+
+  .place-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
   :host {
-    --place-hero-art-top: 72px;
-    --place-hero-art-height: 296px;
-    --place-hero-art-size: 132% auto;
-    --place-hero-art-bleed: 16px;
+    --place-hero-nav-height: 80px;
+    --place-hero-art-height: 248px;
   }
 
   .place-hero {
-    padding: 30px 24px 0;
+    padding: 0 24px;
+  }
+
+  .place-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
   }
 }
 
 @media (min-width: 1200px) {
   :host {
-    --place-hero-art-top: 72px;
-    --place-hero-art-height: 296px;
-    --place-hero-art-size: 132% auto;
-    --place-hero-art-bleed: 16px;
+    --place-hero-nav-height: 80px;
+    --place-hero-art-height: 248px;
   }
 
   .place-hero {
-    padding: 30px 24px 0;
+    padding: 0 24px;
+  }
+
+  .place-hero app-navigation-page {
+    margin: 0 -24px;
+    width: calc(100% + 48px);
+    padding: 0 24px;
   }
 }
 
@@ -477,8 +518,13 @@
     gap: 18px;
   }
 
-  .info-intro {
-    padding: 18px 20px 10px;
+  .place-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 
   .info-intro__title {
@@ -589,8 +635,13 @@
     gap: 18px;
   }
 
-  .info-intro {
-    padding: 18px 20px 10px;
+  .place-hero > .info-intro {
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    max-width: 320px;
+    padding: 0;
+    position: absolute;
   }
 
   .info-intro__title {
