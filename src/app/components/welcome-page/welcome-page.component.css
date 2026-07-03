@@ -115,22 +115,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   width: 100%;
   margin: 8px 0;
 }
 
 .heart-divider__line {
-  width: 48px;
+  width: 28px;
   height: 1px;
-  background: #D3A650;/*rgb(200, 169, 106);*/
-  flex-shrink: 0;
-}
-
-.heart-divider__icon {
-  width: 16px;
-  height: 16px;
-  color: rgb(211, 166, 80);
+  background: rgb(211, 166, 80);
   flex-shrink: 0;
 }
 
@@ -207,12 +199,7 @@
   }
 
   .heart-divider__line {
-    width: 50px;
-  }
-
-  .heart-divider__icon {
-    width: 16px;
-    height: 16px;
+    width: 30px;
   }
 
   .cta {
@@ -276,12 +263,7 @@
   }
 
   .heart-divider__line {
-    width: 52px;
-  }
-
-  .heart-divider__icon {
-    width: 17px;
-    height: 17px;
+    width: 26px;
   }
 
   .cta {
