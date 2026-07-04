@@ -16,9 +16,10 @@
   --icon-map-size: 1.22em;
   --icon-stroke-width: 1.45;
   --icon-gap: 11px;
-  --program-card-inline-padding: 20px;
   --program-bullet-size: 7px;
-  --program-list-inset: calc(25% - (var(--program-card-inline-padding) / 2) - (var(--program-bullet-size) / 2));
+  --program-track-width: 16px;
+  --program-time-width: 42px;
+  --program-list-width: 232px;
 }
 
 .instruction-page {
@@ -261,52 +262,55 @@
 }
 
 .program-list {
-  width: 100%;
+  position: relative;
+  width: min(100%, var(--program-list-width));
   margin: 0 auto;
   padding: 10px 0 8px;
-  text-align: center;
+  text-align: left;
+}
+
+.program-list::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 20px;
+  left: calc((var(--program-track-width) - 1px) / 2);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(211, 166, 80, 0.08),
+    rgba(211, 166, 80, 0.55) 14%,
+    rgba(211, 166, 80, 0.55) 86%,
+    rgba(211, 166, 80, 0.08)
+  );
 }
 
 .program-item {
   position: relative;
   display: block;
   width: 100%;
-  padding: 0 0 14px;
-  text-align: center;
+  padding: 0 0 18px;
 }
 
 .program-item__content {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: calc(var(--program-track-width) + var(--program-time-width) + 10px) minmax(0, 1fr);
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: auto;
-  margin: 0 auto;
+  column-gap: 12px;
+  width: 100%;
+  margin: 0;
 }
 
 .program-item__time-row {
-  display: inline-grid;
-  grid-auto-flow: column;
+  display: grid;
+  grid-template-columns: var(--program-track-width) var(--program-time-width);
   align-items: center;
-  justify-content: center;
   column-gap: 10px;
-  width: fit-content;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .program-item::after {
-  content: "";
-  display: block;
-  width: 78px;
-  height: 1px;
-  margin: 14px auto 0;
-  grid-column: 1 / -1;
-  background: linear-gradient(
-    to right,
-    rgba(201, 166, 70, 0),
-    rgba(201, 166, 70, 0.42),
-    rgba(201, 166, 70, 0)
-  );
+  display: none;
 }
 
 .program-item:last-child {
@@ -321,41 +325,42 @@
 .program-item__label {
   font-family: "Playfair Display", serif;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.45;
   color: #6d625c;
 }
 
 .program-item__time {
   font-weight: 600;
   color: var(--color-text);
+  white-space: nowrap;
 }
 
 .program-item__bullet {
   display: block;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
+  justify-self: center;
   width: calc(var(--program-bullet-size) + 3px);
   height: calc(var(--program-bullet-size) + 3px);
   border: 1px solid rgba(201, 166, 70, 0.72);
   border-radius: 2px;
-  background: rgba(201, 166, 70, 0.08);
+  background: rgba(255, 255, 255, 0.96);
   box-sizing: border-box;
-  transform: translateY(1px) rotate(45deg);
+  transform: rotate(45deg);
   opacity: 0.95;
+  position: relative;
+  z-index: 1;
 }
 
 .program-item__bullet::after {
   content: "";
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #c9a646;
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(211, 166, 80, 0.28);
+  border-radius: 1px;
 }
 
 .program-item__label {
   min-width: 0;
-  text-align: center;
+  text-align: left;
 }
 
 .route-card--text .card-content {
@@ -613,8 +618,10 @@
     --icon-map-size: 1.28em;
     --icon-stroke-width: 1.5;
     --icon-gap: 12px;
-    --program-card-inline-padding: 24px;
     --program-bullet-size: 8px;
+    --program-track-width: 18px;
+    --program-time-width: 46px;
+    --program-list-width: 258px;
   }
 
   .instruction-page {
@@ -678,7 +685,6 @@
   }
 
   .program-list {
-    width: 100%;
     padding: 12px 0 10px;
   }
 
@@ -687,16 +693,17 @@
   }
 
   .program-item__content {
-    gap: 12px;
+    grid-template-columns: calc(var(--program-track-width) + var(--program-time-width) + 12px) minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .program-list::before {
+    top: 14px;
+    bottom: 14px;
   }
 
   .program-item__time-row {
-    gap: 12px;
-  }
-
-  .program-item::after {
-    width: 88px;
-    margin-top: 16px;
+    column-gap: 12px;
   }
 
   .program-item__time,
@@ -759,8 +766,10 @@
     --icon-map-size: 1.28em;
     --icon-stroke-width: 1.5;
     --icon-gap: 12px;
-    --program-card-inline-padding: 24px;
     --program-bullet-size: 8px;
+    --program-track-width: 18px;
+    --program-time-width: 46px;
+    --program-list-width: 258px;
   }
 
   .instruction-page {
@@ -824,7 +833,6 @@
   }
 
   .program-list {
-    width: 100%;
     padding: 12px 0 10px;
   }
 
@@ -833,16 +841,17 @@
   }
 
   .program-item__content {
-    gap: 12px;
+    grid-template-columns: calc(var(--program-track-width) + var(--program-time-width) + 12px) minmax(0, 1fr);
+    column-gap: 14px;
+  }
+
+  .program-list::before {
+    top: 14px;
+    bottom: 14px;
   }
 
   .program-item__time-row {
-    gap: 12px;
-  }
-
-  .program-item::after {
-    width: 88px;
-    margin-top: 16px;
+    column-gap: 12px;
   }
 
   .program-item__time,
