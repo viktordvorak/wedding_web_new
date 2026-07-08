@@ -18,7 +18,7 @@ html, body {
   --color-bg: #F8F6F2;
   --color-text: #726962;/*#2B2B2B;*/
   --color-muted: #6B6B6B;
-  --color-accent: #D3A650;/* #C8A96A;*/
+  --color-accent: rgb(201, 166, 70);/*#D3A650; #C8A96A;*/
   --color-border: #E5DED6;
 }
 
@@ -86,30 +86,6 @@ body {
   }
 }
 
-/* TYPOGRAPHY */
-/*
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-p {
-  font-size: 14px;
-  color: var(--color-muted);
-}*/
-
 h1, h2, h3, p {
   margin: 0;
 }
@@ -127,13 +103,6 @@ button {
 
 /* TABLET */
 @media (min-width: 768px) {
-  /*h1 {
-    font-size: 40px;
-  }
-
-  p {
-    font-size: 15px;
-  }*/
   body {
     display: flex;
     justify-content: center;
@@ -142,15 +111,6 @@ button {
 
 /* DESKTOP */
 @media (min-width: 900px) {
-  
-  /*h1 {
-    font-size: 48px;
-  }
-
-  body {
-    display: flex;
-    justify-content: center;
-  }*/
     body {
     display: flex;
     justify-content: center;
