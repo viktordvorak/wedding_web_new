@@ -256,7 +256,7 @@
 .event-place,
 .event-city {
   font-family: "Playfair Display", serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 1.35;
   color: var(--color-text);
 }
@@ -374,6 +374,39 @@
   font-size: 0.9rem;
   line-height: 1.75;
   color: #5f5f5f;
+}
+
+.route-card--text .card-content .instruction-closing {
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #6d625c;
+}
+
+.route-card--text .card-content .instruction-closing {
+  margin-top: 12px;
+}
+
+.route-card--text .card-content p:has(.instruction-label) {
+  margin-top: 12px;
+}
+
+.route-card--text .card-content strong {
+  color: #c9a646;
+  font-weight: 600;
+}
+
+.route-card--text .card-content .instruction-label {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #c9a646;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  margin-bottom: 6px;
 }
 
 .rsvp-text {
@@ -681,7 +714,7 @@
 
   .event-place,
   .event-city {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
   }
 
   .program-list {
@@ -718,6 +751,20 @@
   .info-card--text .card-content p {
     font-size: 0.95rem;
     line-height: 1.8;
+  }
+
+  .route-card--text .card-content .instruction-closing {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .route-card--text .card-content p:has(.instruction-label) {
+    margin-top: 14px;
+  }
+
+  .route-card--text .card-content .instruction-label {
+    font-size: 0.98rem;
+    margin-bottom: 7px;
   }
 
   .rsvp-text {
@@ -829,7 +876,7 @@
 
   .event-place,
   .event-city {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
   }
 
   .program-list {
@@ -864,6 +911,11 @@
   }
 
   .info-card--text .card-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .route-card--text .card-content .instruction-closing {
     font-size: 0.95rem;
     line-height: 1.8;
   }
