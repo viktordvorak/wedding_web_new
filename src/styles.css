@@ -11,10 +11,12 @@
 
 html, body {
   height: 100%;
+  color-scheme: light;
 }
 
 /* ROOT VARIABLES */
 :root {
+  color-scheme: light;
   --color-bg: #F8F6F2;
   --color-text: #726962;/*#2B2B2B;*/
   --color-muted: #6B6B6B;
