@@ -18,27 +18,35 @@ export class GalleryComponent {
   readonly photos: GalleryPhoto[] = [
     {
       src: 'assets/images/gallery/IMG-20260728-WA0000.jpg',
-      alt: 'Fotografie z galerii 1'
+      alt: 'Fotografie z galerie 1'
     },
     {
       src: 'assets/images/gallery/IMG-20260728-WA0002.jpg',
-      alt: 'Fotografie z galerii 2'
+      alt: 'Fotografie z galerie 2'
     },
     {
       src: 'assets/images/gallery/IMG-20260728-WA0008.jpg',
-      alt: 'Fotografie z galerii 3'
+      alt: 'Fotografie z galerie 3'
     },
     {
-      src: 'assets/images/gallery/IMG-20260728-WA0021.jpg',
-      alt: 'Fotografie z galerii 4'
+      src: 'assets/images/gallery/IMG-20260728-WA0023.jpg',
+      alt: 'Fotografie z galerie 4'
     },
     {
       src: 'assets/images/gallery/IMG-20260728-WA0018.jpg',
-      alt: 'Fotografie z galerii 5'
+      alt: 'Fotografie z galerie 5'
     },
     {
       src: 'assets/images/gallery/IMG-20260728-WA0020.jpg',
-      alt: 'Fotografie z galerii 6'
+      alt: 'Fotografie z galerie 6'
+    },
+    {
+      src: 'assets/images/gallery/IMG-20260728-WA0022.jpg',
+      alt: 'Fotografie z galerie 7'
+    },
+    {
+      src: 'assets/images/gallery/IMG-20260728-WA0021.jpg',
+      alt: 'Fotografie z galerii 8'
     }
   ];
   selectedPhotoIndex: number | null = null;
