@@ -46,3 +46,9 @@ Thumbs.db
 
 .vercel
 .env*
+
+# TypeScript incremental build
+*.tsbuildinfo
+
+# Angular cache
+.angular/

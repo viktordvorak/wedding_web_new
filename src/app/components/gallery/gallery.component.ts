@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NavigationPageComponent } from '../navigation-page/navigation-page.component';
 import { FooterPageComponent } from '../footer-page/footer-page.component';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [NavigationPageComponent, FooterPageComponent, RouterOutlet],
+  imports: [NavigationPageComponent, FooterPageComponent],
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })

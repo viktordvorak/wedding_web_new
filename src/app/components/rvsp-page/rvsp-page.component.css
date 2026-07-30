@@ -88,7 +88,7 @@
 }
 
 .rsvp-intro__text {
-    margin: 10px auto 28px;
+    margin: 5px auto 28px;
 
     max-width: 280px;
 
@@ -574,7 +574,7 @@
 
     .rsvp-intro__text {
         max-width: 340px;
-        margin: 26px auto 34px;
+        margin: 11px auto 34px;
         font-size: 0.98rem;
         line-height: 1.8;
     }
@@ -682,7 +682,7 @@
 
     .rsvp-intro__text {
         max-width: 340px;
-        margin: 26px auto 34px;
+        margin: 11px auto 34px;
         font-size: 0.98rem;
         line-height: 1.8;
     }

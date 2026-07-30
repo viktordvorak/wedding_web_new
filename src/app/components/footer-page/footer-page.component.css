@@ -6,24 +6,13 @@
 .page-footer {
   width: 100%;
   max-width: 100%;
-  margin: 20px auto 0;
-  padding: 12px 0 4px;
+  margin: 0 auto;
+  padding: 0;
   text-align: center;
 }
 
 .page-footer::before {
-  content: "";
-  display: block;
-  width: min(100%, 620px);
-  height: 1px;
-  margin: 0 auto 10px;
-  /*
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(200, 169, 106, 0.25),
-    transparent
-  );*/
+  display: none;
 }
 
 .page-footer p {
@@ -37,8 +26,7 @@
 
 @media (min-width: 768px) {
   .page-footer {
-    margin-top: 24px;
-    padding-top: 16px;
+    padding-top: 0;
   }
 
   .page-footer p {
@@ -47,10 +35,6 @@
 }
 
 @media (min-width: 900px) {
-  .page-footer {
-    margin-top: 24px;
-  }
-
   .page-footer p {
     font-size: 1rem;
   }

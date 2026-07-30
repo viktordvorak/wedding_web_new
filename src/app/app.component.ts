@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { NavigationPageComponent } from './components/navigation-page/navigation-page.component';
-import { FooterPageComponent } from './components/footer-page/footer-page.component';
 import { RouterOutlet } from '@angular/router';
 import {
   trigger,
   transition,
   style,
   animate,
-  query,
-  group
+  query
 } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [NavigationPageComponent, FooterPageComponent, RouterOutlet],
+  imports: [RouterOutlet],
   standalone: true,
   animations: [
     trigger('routeAnimations', [
@@ -37,6 +34,16 @@ import {
 export class AppComponent {
   title = 'wedding-web';
 
+  isMultiCardRoute(outlet: RouterOutlet): boolean {
+    if (!outlet || !outlet.isActivated) {
+      return false;
+    }
+
+    const path = outlet.activatedRoute.routeConfig?.path;
+
+    return path === 'place-page' || path === 'guests-page' || path === 'gallery-page';
+  }
+
   prepareRoute(outlet: RouterOutlet): string {
     if (!outlet || !outlet.isActivated) {
       return '';
@@ -47,13 +54,5 @@ export class AppComponent {
       outlet.activatedRoute?.routeConfig?.path ??
       ''
     );
-  }
-
-  logStart(e: any) {
-    console.log('ANIMATION START', e);
-  }
-
-  logDone(e: any) {
-    console.log('ANIMATION DONE', e);
   }
 }
