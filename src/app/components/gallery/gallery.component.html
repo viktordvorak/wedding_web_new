@@ -7,38 +7,68 @@
         <!--<h1 class="info-intro__title">Galerie</h1>-->
 
         <p class="info-intro__text">
-          Jednou tady možná budou<br>
-          i nějaké fotky.
+          Tak takhle jsme si užívali<br /> 
+          život před svatbou.
         </p>
       </section>
     </section>
   </section>
 
-  <section class="gallery-grid" aria-label="Galerie placeholderů">
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
-
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
-
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
-
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
-
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
-
-    <section class="route-card route-card--section gallery-photo-card">
-      <figure class="gallery-item"></figure>
-    </section>
+  <section class="gallery-grid" aria-label="Galerie fotek">
+    @for (photo of photos; track photo.src; let index = $index) {
+      <section class="route-card route-card--section gallery-photo-card">
+        <button
+          type="button"
+          class="gallery-item gallery-item-button"
+          (click)="openLightbox(index)"
+          [attr.aria-label]="'Otevrit fotografii ' + (index + 1)"
+        >
+          <img [src]="photo.src" [alt]="photo.alt">
+        </button>
+      </section>
+    }
   </section>
+
+  @if (selectedPhoto; as activePhoto) {
+    <section
+      class="gallery-lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Nahled fotografie"
+      (click)="closeLightbox()"
+    >
+      <button
+        type="button"
+        class="gallery-lightbox__close"
+        aria-label="Zavrit nahled"
+        (click)="closeLightbox(); $event.stopPropagation()"
+      >
+        ×
+      </button>
+
+      <button
+        type="button"
+        class="gallery-lightbox__nav gallery-lightbox__nav--prev"
+        aria-label="Predchozi fotografie"
+        (click)="showPreviousPhoto(); $event.stopPropagation()"
+      >
+        ‹
+      </button>
+
+      <figure class="gallery-lightbox__figure" (click)="$event.stopPropagation()">
+        <img class="gallery-lightbox__image" [src]="activePhoto.src" [alt]="activePhoto.alt">
+      </figure>
+
+      <button
+        type="button"
+        class="gallery-lightbox__nav gallery-lightbox__nav--next"
+        aria-label="Dalsi fotografie"
+        (click)="showNextPhoto(); $event.stopPropagation()"
+      >
+        ›
+      </button>
+    </section>
+  }
 
   <section class="route-card route-card--footer">
     <app-footer-page></app-footer-page>
