@@ -7,12 +7,13 @@ import {
   animate,
   query
 } from '@angular/animations';
+import { DarkModeWarningComponent } from './components/dark-mode-warning/dark-mode-warning.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, DarkModeWarningComponent],
   standalone: true,
   animations: [
     trigger('routeAnimations', [

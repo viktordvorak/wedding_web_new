@@ -61,7 +61,7 @@
   height: var(--guest-hero-art-height);
   background-image:
     linear-gradient(to top, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.22) 40%, rgba(0, 0, 0, 0.08) 100%),
-    url('/assets/images/header-background11.png');
+    url('/assets/images/header-background12.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

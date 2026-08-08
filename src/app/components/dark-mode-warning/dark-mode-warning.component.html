@@ -1,0 +1,28 @@
+@if (showWarning) {
+  <div class="dark-mode-warning" role="alert">
+    <button
+      type="button"
+      class="close-button"
+      aria-label="Zavřít upozornění"
+      (click)="closeWarning()"
+    >
+      ×
+    </button>
+
+    <strong>Upozornění na zobrazení barev</strong>
+
+    @if (warningVariant === 'samsung') {
+      <p>
+        Samsung Internet může při zapnutém nuceném tmavém režimu změnit
+        barvy této stránky. Pokud se web zobrazuje tmavě, vypněte v nastavení
+        prohlížeče volbu „Nucený tmavý režim pro webový obsah“.
+      </p>
+    } @else {
+      <p>
+        Máte zapnutý tmavý režim, který může na této stránce změnit
+        barvy webu. Pro správné zobrazení vypněte tmavý režim v
+        nastavení prohlížeče nebo zařízení.
+      </p>
+    }
+  </div>
+}

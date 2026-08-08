@@ -1,0 +1,38 @@
+.dark-mode-warning {
+  position: fixed;
+  z-index: 10000;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px 42px 16px 16px;
+
+  color: #3d342a;
+  background-color: #fdf8f4;
+  border: 1px solid #dfad38;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 25%);
+
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.dark-mode-warning p {
+  margin: 8px 0 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: #3d342a;
+  font-size: 26px;
+  cursor: pointer;
+}
